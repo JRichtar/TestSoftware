@@ -1,0 +1,91 @@
+﻿<Window x:Class="TestSoftware.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestSoftware"
+        mc:Ignorable="d"
+        Title="Testovací software" Height="600" Width="800" MaxHeight="600" MinHeight="600" MaxWidth="800" MinWidth="800" Loaded="Window_Loaded">
+    <Grid Background="#FFE6A83B">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="143*"></ColumnDefinition>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="34*"></ColumnDefinition>
+            <ColumnDefinition Width="581*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ListView Name="Tests" Grid.Column="0" Grid.Row="1" Grid.RowSpan="9" ItemsSource="{Binding Tests}" Background="DarkGray" Grid.ColumnSpan="2" SelectionChanged="Tests_SelectionChanged" MouseDoubleClick="Tests_MouseDoubleClick" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding TestName}" FontFamily="Times New Roman"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Label Content="Výběr testů:" FontFamily="Times New Roman" FontSize="26" FontWeight="Bold" FontStyle="Normal" Grid.Row="0" Grid.Column="0"   Background="Gray" Margin="0,0,0,57" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+        <Label Content="{Binding TestName}" Grid.Row="0" Grid.Column="2" Background="#FFE6A83B" FontFamily="Times New Roman" FontSize="26" Margin="0,0,0,57" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+
+        <Label Content="Otázka č. 1:" Grid.Row="1" Grid.Column="2" FontFamily="Times New Roman" Margin="0,0,530,30" FontWeight="Bold" FontSize="12" Grid.ColumnSpan="2"/>
+        <Label Content="Otázka č. 2:" Grid.Row="2" Grid.Column="2" FontFamily="Times New Roman" Margin="0,57,530,30" FontWeight="Bold" FontSize="12" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Label Content="Otázka č. 3:" Grid.Row="5" Grid.Column="2" FontFamily="Times New Roman" Margin="0,0,530,30" FontWeight="Bold" FontSize="12" Grid.ColumnSpan="2"/>
+        <Label Content="Otázka č. 4:" Grid.Row="6" Grid.Column="2" FontFamily="Times New Roman" Margin="0,57,530,30" FontWeight="Bold" FontSize="12" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Label Content="{Binding Otazka1}" Grid.Row="1" Grid.Column="3" FontSize="18" FontFamily="Times New Roman" Margin="41,20,15,40" Grid.RowSpan="2"></Label>
+        <Label Content="{Binding Otazka2}" Grid.Row="3" Grid.Column="3" FontSize="18" FontFamily="Times New Roman" Margin="41,20,15,40" Grid.RowSpan="2"></Label>
+        <Label Content="{Binding Otazka3}" Grid.Row="5" Grid.Column="3" FontSize="18" FontFamily="Times New Roman" Margin="41,20,15,40" Grid.RowSpan="2"></Label>
+        <Label Content="{Binding Otazka4}" Grid.Row="7" Grid.Column="3" FontSize="18" FontFamily="Times New Roman" Margin="41,20,15,40" Grid.RowSpan="2"></Label>
+
+        <Label Content="A" Grid.Row="2" Grid.Column="2" FontFamily="Times New Roman" Margin="25,31,550,0" Grid.ColumnSpan="2"/>
+        <Label Content="B" Grid.Row="2" Grid.Column="3" FontFamily="Times New Roman" Margin="141,31,410,0"></Label>
+        <Label Content="C" Grid.Row="2" Grid.Column="3" FontFamily="Times New Roman" Margin="281,31,270,0"></Label>
+        <Label Content="D" Grid.Row="2" Grid.Column="3" FontFamily="Times New Roman" Margin="431,31,120,0"></Label>
+        <RadioButton Checked="Odpoved1A_Checked" Name="Odpoved1A" Content="{Binding Odpoved1A}" Grid.Row="2" Grid.Column="3" GroupName="Odpoved1" Margin="6,35,455,0"/>
+        <RadioButton Name="Odpoved1B" Content="{Binding Odpoved1B}" Grid.Row="2" Grid.Column="3" GroupName="Odpoved1" Margin="156,35,310,0"></RadioButton>
+        <RadioButton Name="Odpoved1C" Content="{Binding Odpoved1C}" Grid.Row="2" Grid.Column="3" GroupName="Odpoved1" Margin="296,35,165,0"></RadioButton>
+        <RadioButton Name="Odpoved1D" Content="{Binding Odpoved1D}" Grid.Row="2" Grid.Column="3" GroupName="Odpoved1" Margin="446,35,10,0"></RadioButton>
+
+        <Label Content="A" Grid.Row="4" Grid.Column="2" FontFamily="Times New Roman" Margin="25,31,550,57" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Label Content="B" Grid.Row="4" Grid.Column="3" FontFamily="Times New Roman" Margin="141,31,410,57" Grid.RowSpan="2"></Label>
+        <Label Content="C" Grid.Row="4" Grid.Column="3" FontFamily="Times New Roman" Margin="281,31,270,57" Grid.RowSpan="2"></Label>
+        <Label Content="D" Grid.Row="4" Grid.Column="3" FontFamily="Times New Roman" Margin="431,31,120,57" Grid.RowSpan="2"></Label>
+        <RadioButton Name="Odpoved2A" Content="{Binding Odpoved2A}" Grid.Row="4" Grid.Column="3" GroupName="Odpoved2" Margin="6,35,455,57" Grid.RowSpan="2"/>
+        <RadioButton Name="Odpoved2B" Content="{Binding Odpoved2B}" Grid.Row="4" Grid.Column="3" GroupName="Odpoved2" Margin="156,35,310,57" Grid.RowSpan="2"></RadioButton>
+        <RadioButton Name="Odpoved2C" Content="{Binding Odpoved2C}" Grid.Row="4" Grid.Column="3" GroupName="Odpoved2" Margin="296,35,165,57" Grid.RowSpan="2"></RadioButton>
+        <RadioButton Name="Odpoved2D" Content="{Binding Odpoved2D}" Grid.Row="4" Grid.Column="3" GroupName="Odpoved2" Margin="446,35,10,57" Grid.RowSpan="2"></RadioButton>
+
+        <Label Content="A" Grid.Row="6" Grid.Column="2" FontFamily="Times New Roman" Margin="25,31,550,0" Grid.ColumnSpan="2"/>
+        <Label Content="B" Grid.Row="6" Grid.Column="3" FontFamily="Times New Roman" Margin="141,31,410,0"></Label>
+        <Label Content="C" Grid.Row="6" Grid.Column="3" FontFamily="Times New Roman" Margin="281,31,270,0"></Label>
+        <Label Content="D" Grid.Row="6" Grid.Column="3" FontFamily="Times New Roman" Margin="431,31,120,0"></Label>
+        <RadioButton Name="Odpoved3A" Content="{Binding Odpoved3A}" Grid.Row="6" Grid.Column="3" GroupName="Odpoved3" Margin="6,35,455,0"/>
+        <RadioButton Name="Odpoved3B" Content="{Binding Odpoved3B}" Grid.Row="6" Grid.Column="3" GroupName="Odpoved3" Margin="156,35,310,0"></RadioButton>
+        <RadioButton Name="Odpoved3C" Content="{Binding Odpoved3C}" Grid.Row="6" Grid.Column="3" GroupName="Odpoved3" Margin="296,35,165,0"></RadioButton>
+        <RadioButton Name="Odpoved3D" Content="{Binding Odpoved3D}" Grid.Row="6" Grid.Column="3" GroupName="Odpoved3" Margin="446,35,10,0"></RadioButton>
+
+        <Label Content="A" Grid.Row="8" Grid.Column="2" FontFamily="Times New Roman" Margin="25,31,550,57" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Label Content="B" Grid.Row="8" Grid.Column="3" FontFamily="Times New Roman" Margin="141,31,410,57" Grid.RowSpan="2"></Label>
+        <Label Content="C" Grid.Row="8" Grid.Column="3" FontFamily="Times New Roman" Margin="281,31,270,57" Grid.RowSpan="2"></Label>
+        <Label Content="D" Grid.Row="8" Grid.Column="3" FontFamily="Times New Roman" Margin="431,31,120,57" Grid.RowSpan="2"></Label>
+        <RadioButton Name="Odpoved4A" Content="{Binding Odpoved4A}" Grid.Row="8" Grid.Column="3" GroupName="Odpoved4" Margin="6,35,455,57" Grid.RowSpan="2"/>
+        <RadioButton Name="Odpoved4B" Content="{Binding Odpoved4B}" Grid.Row="8" Grid.Column="3" GroupName="Odpoved4" Margin="156,35,310,57" Grid.RowSpan="2"></RadioButton>
+        <RadioButton Name="Odpoved4C" Content="{Binding Odpoved4C}" Grid.Row="8" Grid.Column="3" GroupName="Odpoved4" Margin="296,35,165,57" Grid.RowSpan="2"></RadioButton>
+        <RadioButton Name="Odpoved4D" Content="{Binding Odpoved4D}" Grid.Row="8" Grid.Column="3" GroupName="Odpoved4" Margin="446,35,10,57" Grid.RowSpan="2"></RadioButton>
+
+        <Button Name="AddTestButton" Content="Přidat test" FontFamily="Times New Roman" FontSize="18" Grid.Column="0" Grid.Row="9" Background="Gray" Margin="30,10,30,10" Grid.ColumnSpan="2" Click="AddTestButton_Click"></Button>
+        <Button Name="CheckTest" Content="Vyhodnotit test" FontFamily="Times New Roman" FontSize="18" Grid.Column="3" Grid.Row="9" Background="Gray" Margin="191,5,225,5" Click="CheckTest_Click"></Button>
+        <Button Name="RestartButton" Content="Smazat" FontFamily="Times New Roman" FontSize="18" Grid.Column="3" Grid.Row="9" Background="Gray" Margin="400,15,50,15" Click="RestartButton_Click"></Button>
+    </Grid>
+</Window>
