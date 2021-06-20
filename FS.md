@@ -1,11 +1,11 @@
 # Funkční Specifikace
-## Verze 1
+## Verze 2
 
 Tvorba softwaru ve formě gramatického testu
 
 Jakub Richtár <br/>
 richtar.jakub.2018@skola.ssps.cz <br/>
-23. 5. 2021
+20. 6. 2021
 
  
 
@@ -22,6 +22,8 @@ richtar.jakub.2018@skola.ssps.cz <br/>
     2. Role žák: Vyplňuej testy
   * Vymezení rozsahu
     * Nebude možné v testu vytvořit otevřené otázky
+    * Limit 4 otázek na test, odpovědi A, B, C, D
+    * Správné odpovědi jsou předem určené
 * Celková hrubá architektura 
   * Pracovní tok
     * Po spuštění aplikace bude nutné vytvořit test, po vytvoření testu bude možné test vyplnit a následně zobrazit a uložit výsledky
